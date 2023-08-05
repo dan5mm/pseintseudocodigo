@@ -1,28 +1,17 @@
-Algoritmo DeterminarPrimo
-    Definir numero, divisor, esPrimo como Entero
-    esPrimo <- 1
+Algoritmo DeterminarBisiesto
+    Definir año, esBisiesto como Entero
+    esBisiesto <- 0
     
-    Escribir "Ingrese un número:"
-    Leer numero
+    Escribir "Ingrese un año:"
+    Leer año
     
-    Si numero <= 1 Entonces
-        esPrimo <- 0
-    Sino Si numero <= 3 Entonces
-			esPrimo <- 1
-		Sino
-			divisor <- 2
-			
-			Mientras divisor * divisor <= numero Hacer
-				Si numero % divisor = 0 Entonces
-					esPrimo <- 0
-	finsi
-				divisor <- divisor + 1
-			Fin Mientras
-		Fin Si
-	finsi	
-		Si esPrimo = 1 Entonces
-			Escribir "El número es primo."
-		Sino
-			Escribir "El número no es primo."
-	Fin Si
-	Fin Algoritmo
+    Si (año % 4 = 0 Y año % 100 <> 0) O año % 400 = 0 Entonces
+        esBisiesto <- 1
+    Fin Si
+    
+    Si esBisiesto = 1 Entonces
+        Escribir "El año es bisiesto."
+    Sino
+        Escribir "El año no es bisiesto."
+    Fin Si
+Fin Algoritmo
